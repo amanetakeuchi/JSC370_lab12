@@ -13,7 +13,7 @@ This is my JSC370 Lab 12 Website
 source("process_starbucks_data.R")
 ```
 
-## Showcasing a single plot
+## 1. Showcasing a single plot
 
 ```{r echo=FALSE}
 p3<- sb_nutr |>
@@ -27,7 +27,7 @@ ggplotly(p3)
 ```
 
 
-## Showcasing multiple plots {.tabset}
+## 2. Showcasing multiple plots {.tabset}
 
 ### Figure 1
 
