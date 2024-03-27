@@ -8,3 +8,29 @@ output:
 ---
 
 This is my JSC370 Final Project website.
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+source("process_starbucks_data.R")
+```
+
+## Showcasing plots {.tabset}
+
+### Figure 1
+
+```{r echo=FALSE}
+pl <- ggplot(sb_locs_state, aes(x=population, y=n_stores, color=state)) + 
+  geom_point(alpha=0.8)
+ggplotly(pl)
+```
+
+### Figure 2
+
+```{r echo=FALSE}
+pl2 <- ggplot(sb_nutr, aes(x=Calories, fill=Category)) + 
+  geom_histogram(alpha=0.5, position="identity") + theme_minimal()
+
+ggplotly(pl2)
+```
+
+{-}
+
