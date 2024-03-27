@@ -1,5 +1,5 @@
 ---
-title: "JSC370 Final Project"
+title: "JSC370 Lab 12"
 author: "Amane Takeuchi"
 output: 
     html_document:
@@ -7,13 +7,27 @@ output:
         toc_float: TRUE
 ---
 
-This is my JSC370 Final Project website.
+This is my JSC370 Lab 12 Website
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
 source("process_starbucks_data.R")
 ```
 
-## Showcasing plots {.tabset}
+## Showcasing a single plot
+
+```{r echo=FALSE}
+p3<- sb_nutr |>
+  unnest_tokens(word, Item, token="words") |>
+  count(word, sort=T) |>
+  head(20) |>
+  ggplot(aes(x=word, y=n))+
+  geom_col()+
+  coord_flip()
+ggplotly(p3)
+```
+
+
+## Showcasing multiple plots {.tabset}
 
 ### Figure 1
 
